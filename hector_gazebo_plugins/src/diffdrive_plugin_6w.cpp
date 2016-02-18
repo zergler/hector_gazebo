@@ -220,21 +220,21 @@ void DiffDrivePlugin6W::Update()
 
   if (enableMotors)
   {
-    joints[FRONT_LEFT]->SetVelocity(0, wheelSpeed[0] / (wheelDiam / 2.0));
-    joints[MID_LEFT]->SetVelocity(0, wheelSpeed[0] / (wheelDiam / 2.0));
-    joints[REAR_LEFT]->SetVelocity(0, wheelSpeed[0] / (wheelDiam / 2.0));
+	joints[FRONT_LEFT]->SetParam("vel", 0, wheelSpeed[0] / (wheelDiam / 2.0));
+	joints[MID_LEFT]->SetParam("vel", 0, wheelSpeed[0] / (wheelDiam / 2.0));
+	joints[REAR_LEFT]->SetParam("vel", 0, wheelSpeed[0] / (wheelDiam / 2.0));
 
-    joints[FRONT_RIGHT]->SetVelocity(0, wheelSpeed[1] / (wheelDiam / 2.0));
-    joints[MID_RIGHT]->SetVelocity(0, wheelSpeed[1] / (wheelDiam / 2.0));
-    joints[REAR_RIGHT]->SetVelocity(0, wheelSpeed[1] / (wheelDiam / 2.0));
+	joints[FRONT_RIGHT]->SetParam("vel", 0, wheelSpeed[0] / (wheelDiam / 2.0));
+	joints[MID_RIGHT]->SetParam("vel", 0, wheelSpeed[0] / (wheelDiam / 2.0));
+	joints[REAR_RIGHT]->SetParam("vel", 0, wheelSpeed[0] / (wheelDiam / 2.0));
 
-    joints[FRONT_LEFT]->SetMaxForce(0, torque);
-    joints[MID_LEFT]->SetMaxForce(0, torque);
-    joints[REAR_LEFT]->SetMaxForce(0, torque);
+	joints[FRONT_LEFT]->SetParam("fmax", 0, torque);
+	joints[MID_LEFT]->SetParam("fmax", 0, torque);
+	joints[REAR_LEFT]->SetParam("fmax", 0, torque);
 
-    joints[FRONT_RIGHT]->SetMaxForce(0, torque);
-    joints[MID_RIGHT]->SetMaxForce(0, torque);
-    joints[REAR_RIGHT]->SetMaxForce(0, torque);
+	joints[FRONT_RIGHT]->SetParam("fmax", 0, torque);
+	joints[MID_RIGHT]->SetParam("fmax", 0, torque);
+	joints[REAR_RIGHT]->SetParam("fmax", 0, torque);
   }
 
   //publish_odometry();
